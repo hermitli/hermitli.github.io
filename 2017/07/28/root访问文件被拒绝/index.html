@@ -72,7 +72,7 @@
     version: '7.2.0',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    copycode: {"enable":true,"show_result":false,"style":null},
     fancybox: false,
     mediumzoom: false,
     lazyload: false,
@@ -522,6 +522,15 @@
           </div>
           
   
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
 
 
@@ -560,7 +569,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -606,7 +615,9 @@
         
           
         
-        <span class="site-state-item-count">3</span>
+          
+        
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -845,6 +856,38 @@ window.addEventListener("message", function(e) {
 
 
 
+
+
+  
+    
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css">
+
+
+
+
+<script>
+  function initialDsq() {
+    window.dsqjs = new DisqusJS({
+      api: 'https://lyth.cf/disqus/api/' || 'https://disqus.com/api/',
+      apikey: '7OcNX7oLfYsPbSxup8OdkKAkSNCOsmP0hbJDaNTfUbAkXuw33IZq7yPh8W8YzJTM',
+      shortname: 'lyth',
+      url: "https://lyth.cf/2017/07/28/root访问文件被拒绝/",
+      identifier: "2017/07/28/root访问文件被拒绝/",
+      title: 'root用户访问文件被拒绝',
+    });
+  }
+
+  function loadDsqJS() {
+    var d = document, s = d.createElement('script');
+    s.src = '//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js';
+    s.onload = initialDsq;
+    (d.head || d.body).appendChild(s);
+  }
+  
+  window.addEventListener('load', loadDsqJS, false);
+</script>
 
 
   
