@@ -386,7 +386,7 @@
                 
               
 
-              <time title="创建时间：2019-08-14 14:29:50 / 修改时间：10:38:41" itemprop="dateCreated datePublished" datetime="2019-08-14T14:29:50+08:00">2019-08-14</time>
+              <time title="创建时间：2019-08-14 14:29:50 / 修改时间：10:42:47" itemprop="dateCreated datePublished" datetime="2019-08-14T14:29:50+08:00">2019-08-14</time>
             </span>
           
 
@@ -449,7 +449,7 @@
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ul>
 <li><p>Step1<br>根据RXOUT_DIV确定ES_HORZ_OFFSET的范围。RXOUT_DIV可以通过UG476 Table4-20确定</p>
 </li>
-<li><p>Step2<br>配置GTX，包括EQ及AGC。选择使用LPM模式或是DFE模式，若是DFE模式，一次扫描要扫2次眼图，ES_VERT_OFFSET[8]，即UT=1与UT=0各要扫描一次。</p>
+<li><p>Step2<br>配置GTX，包括EQ及AGC。选择使用LPM模式或是DFE模式，若是DFE模式，一个点要扫描两次，ES_VERT_OFFSET[8]，即UT=1与UT=0各要扫描一次。</p>
 </li>
 <li><p>Step3<br>根据数据bus宽度的不通，需要告知eye scan模块比较哪些bit的数据，这是ES_SDATA_MASK 及ES_QUAL_MASK决定的。<br>ES_QUAL_MASK用于忽略掉一些特殊的pattern，例如K28.5.实际使用中，常常设置</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ES_QUAL_MASK=&#123;<span class="number">160</span>&#123;<span class="number">1'b1</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
