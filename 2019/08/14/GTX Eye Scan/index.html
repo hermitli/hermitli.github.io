@@ -99,17 +99,21 @@
   };
 </script>
 
-  <meta name="description" content="有时候在linux系统中尝试删除或者修改某个文件时候，会被拒绝，即使是使用了root权限。这很可能是因为在文件的扩展属性中设置了immutable标记。如下所示 123456789root@localhost:~# touch immutable-fileroot@localhost:~# chattr +i immutableroot@localhost:~# ll immutable-file">
+  <meta name="description" content="属性及寄存器 ES_VERT_OFFSET范围是-127~+127.  注意这个数据不是二进制补码的形式ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0 ES_HORZ_OFFSET根据RXOUT_DIV不通，范围">
+<meta name="keywords" content="FPGA,Kintex7,GTX">
 <meta property="og:type" content="article">
-<meta property="og:title" content="root用户访问文件被拒绝">
-<meta property="og:url" content="https://lyth.cf/2017/07/28/root访问文件被拒绝/index.html">
+<meta property="og:title" content="GTX Eye Scan">
+<meta property="og:url" content="https://lyth.cf/2019/08/14/GTX Eye Scan/index.html">
 <meta property="og:site_name" content="L&amp;T的生活">
-<meta property="og:description" content="有时候在linux系统中尝试删除或者修改某个文件时候，会被拒绝，即使是使用了root权限。这很可能是因为在文件的扩展属性中设置了immutable标记。如下所示 123456789root@localhost:~# touch immutable-fileroot@localhost:~# chattr +i immutableroot@localhost:~# ll immutable-file">
+<meta property="og:description" content="属性及寄存器 ES_VERT_OFFSET范围是-127~+127.  注意这个数据不是二进制补码的形式ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0 ES_HORZ_OFFSET根据RXOUT_DIV不通，范围">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-28T12:10:46.686Z">
+<meta property="og:image" content="https://lyth.cf/2019/08/14/GTX%20Eye%20Scan/Snipaste_2019-08-14_10-22-54.png">
+<meta property="og:image" content="https://lyth.cf/2019/08/14/GTX%20Eye%20Scan/Snipaste_2019-08-14_10-27-21.png">
+<meta property="og:updated_time" content="2019-08-14T02:38:41.239Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="root用户访问文件被拒绝">
-<meta name="twitter:description" content="有时候在linux系统中尝试删除或者修改某个文件时候，会被拒绝，即使是使用了root权限。这很可能是因为在文件的扩展属性中设置了immutable标记。如下所示 123456789root@localhost:~# touch immutable-fileroot@localhost:~# chattr +i immutableroot@localhost:~# ll immutable-file">
+<meta name="twitter:title" content="GTX Eye Scan">
+<meta name="twitter:description" content="属性及寄存器 ES_VERT_OFFSET范围是-127~+127.  注意这个数据不是二进制补码的形式ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0 ES_HORZ_OFFSET根据RXOUT_DIV不通，范围">
+<meta name="twitter:image" content="https://lyth.cf/2019/08/14/GTX%20Eye%20Scan/Snipaste_2019-08-14_10-22-54.png">
 
 
 
@@ -117,7 +121,7 @@
 
   
   
-  <link rel="canonical" href="https://lyth.cf/2017/07/28/root访问文件被拒绝/">
+  <link rel="canonical" href="https://lyth.cf/2019/08/14/GTX Eye Scan/">
 
 
 
@@ -128,7 +132,7 @@
 </script>
 
   
-  <title>root用户访问文件被拒绝 | L&T的生活</title>
+  <title>GTX Eye Scan | L&T的生活</title>
   
 
 
@@ -344,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lyth.cf/2017/07/28/root访问文件被拒绝/">
+    <link itemprop="mainEntityOfPage" href="https://lyth.cf/2019/08/14/GTX Eye Scan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="L&T">
@@ -361,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">root用户访问文件被拒绝
+          <h1 class="post-title" itemprop="name headline">GTX Eye Scan
 
               
             
@@ -387,23 +391,13 @@
                 
               
 
-              <time title="创建时间：2017-07-28 10:49:50" itemprop="dateCreated datePublished" datetime="2017-07-28T10:49:50+08:00">2017-07-28</time>
+              <time title="创建时间：2019-08-14 14:29:50 / 修改时间：10:38:41" itemprop="dateCreated datePublished" datetime="2019-08-14T14:29:50+08:00">2019-08-14</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-28 20:10:46" itemprop="dateModified" datetime="2019-07-28T20:10:46+08:00">2019-07-28</time>
-              </span>
             
           
 
@@ -416,7 +410,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/FPGA/" itemprop="url" rel="index"><span itemprop="name">FPGA</span></a></span>
 
                 
                 
@@ -451,11 +445,46 @@
       
 
       
-        <p>有时候在linux系统中尝试删除或者修改某个文件时候，会被拒绝，即使是使用了root权限。这很可能是因为在文件的扩展属性中设置了immutable标记。<br>如下所示</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:~<span class="comment"># touch immutable-file</span></span><br><span class="line">root@localhost:~<span class="comment"># chattr +i immutable</span></span><br><span class="line">root@localhost:~<span class="comment"># ll immutable-file</span></span><br><span class="line">-rw-r--r-- 1 root root 0 Jul 28 08:07 immutable-file</span><br><span class="line">root@localhost:~<span class="comment"># lsattr immutable-file</span></span><br><span class="line">----i--------e-- immutable-file</span><br><span class="line">root@localhost:~<span class="comment"># rm -f immutable-file</span></span><br><span class="line">rm: cannot remove <span class="string">'immutable-file'</span>: Operation not permitted</span><br><span class="line">root@localhost:~<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+        <h2 id="属性及寄存器"><a href="#属性及寄存器" class="headerlink" title="属性及寄存器"></a>属性及寄存器</h2><ul>
+<li>ES_VERT_OFFSET<br>范围是-127~+127.  注意这个数据不是二进制补码的形式<br>ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127<br>ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数<br>ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0</li>
+<li>ES_HORZ_OFFSET<br>根据RXOUT_DIV不通，范围也不一样<br>RXOUT_DIV=1(Full)       -32 (11’b11111100000) +0(11’b00000000000)  +32(11’b00000100000)<br>RXOUT_DIV=1(Half)      -64 (11’b11111000000) +0(11’b00000000000)  +64(11’b00001000000)<br>RXOUT_DIV=1(Qrtr)     -128 (11’b11110000000) +0(11’b00000000000) +128(11’b00010000000)<br>RXOUT_DIV=1(Octal)   -256 (11’b11100000000) +0(11’b00000000000) +256(11’b00100000000)<br>RXOUT_DIV=1(Hex)     -512 (11’b11000000000) +0(11’b00000000000) +512(11’b01000000000)</li>
+</ul>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ul>
+<li><p>Step1<br>根据RXOUT_DIV确定ES_HORZ_OFFSET的范围。RXOUT_DIV可以通过UG476 Table4-20确定</p>
+</li>
+<li><p>Step2<br>配置GTX，包括EQ及AGC。选择使用LPM模式或是DFE模式，若是DFE模式，一次扫描要扫2次眼图，ES_VERT_OFFSET[8]，即UT=1与UT=0各要扫描一次。</p>
+</li>
+<li><p>Step3<br>根据数据bus宽度的不通，需要告知eye scan模块比较哪些bit的数据，这是ES_SDATA_MASK 及ES_QUAL_MASK决定的。<br>ES_QUAL_MASK用于忽略掉一些特殊的pattern，例如K28.5.实际使用中，常常设置</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ES_QUAL_MASK=&#123;<span class="number">160</span>&#123;<span class="number">1'b1</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
 
-<p>可以用以下方法解决</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:~<span class="comment"># chattr -i immutable-file</span></span><br><span class="line">root@localhost:~<span class="comment"># lsattr immutable-file</span></span><br><span class="line">-------------e-- immutable-file</span><br><span class="line">root@localhost:~<span class="comment"># rm -f immutable-file</span></span><br><span class="line">root@localhost:~<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<p>即不忽略任何pattern。<br>ES_SDATA_MASK需要根据GTX内部bus宽度决定，例如</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ES_SDATA_MASK = &#123;&#123;<span class="number">40</span>&#123;<span class="number">1'b1</span>&#125;&#125;, &#123;<span class="number">40</span>&#123;<span class="number">1'b0</span>&#125;&#125;&#125;; <span class="comment">//40-bit width</span></span><br><span class="line">ES_SDATA_MASK = &#123;&#123;<span class="number">40</span>&#123;<span class="number">1'b1</span>&#125;&#125;, &#123;<span class="number">32</span>&#123;<span class="number">1'b0</span>&#125;&#125;, &#123;<span class="number">8</span>&#123;<span class="number">1'b1</span>&#125;&#125;&#125;; <span class="comment">//32-bit width</span></span><br><span class="line">ES_SDATA_MASK = &#123;&#123;<span class="number">40</span>&#123;<span class="number">1'b1</span>&#125;&#125;, &#123;<span class="number">20</span>&#123;<span class="number">1'b0</span>&#125;&#125;,&#123;<span class="number">20</span>&#123;<span class="number">1'b1</span>&#125;&#125;&#125;; <span class="comment">//20-bit width</span></span><br><span class="line">ES_SDATA_MASK = &#123;&#123;<span class="number">40</span>&#123;<span class="number">1'b1</span>&#125;&#125;, &#123;<span class="number">16</span>&#123;<span class="number">1'b0</span>&#125;&#125;,&#123;<span class="number">24</span>&#123;<span class="number">1'b1</span>&#125;&#125;&#125;； <span class="comment">//16-bit width</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Step4<br>开始扫描。设置如下参数<br>ES_CONTROL [5:0] = 6b000000<br>ES_EYE_SCAN_EN = 1b1 使能eye scan模块<br>ES_ERRDET_EN = 1b1 使能 error detection，如果偏移采样的结果与实际恢复数据不一致，SDATA的对应bit会变成1<br>ES_PRESCALE 用于设置期望的误码率，可以从一个比较小的值开始，比如4</p>
+</li>
+<li><p>Step5<br>确定水平及垂直方向采样的步长，例如hstepSize=8，vstepSize=8.然后再设置采样位置ES_VERT_OFFSET及ES_HORZ_OFFSET。水平方向ES_HORZ_OFFSET是一个二进制补码的符号数，需要注意的是范围不要超出，另外中心点的位置数据是<code>ES_HORZ_OFFSET[10]=1&#39;b0</code></p>
+</li>
+<li><p>Step6<br>将状态机置于RESET模式。RUN bit置为1</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ES_CONTROL = <span class="number">6</span>b000001;</span><br><span class="line">ES_ERRDET_EN = <span class="number">1'b1</span>;</span><br><span class="line">ES_EYE_SCAN_EN = <span class="number">1'b1</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Step7<br>读取ES_CONTROL_STATUS寄存器，检查状态机是否回到了END状态。如果到了END状态， <code>ES_CONTROL_STATUS[0]=1&#39;b1</code>且<code>ES_CONTROL_STATUS[3:1]=3&#39;b010</code><br>如果ES_CONTROL_STATUS==6，则状态机仍然处于COUN计数状态</p>
+</li>
+<li><p>Step8<br>将状态机置于WAIT状态</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ES_CONTROL [<span class="number">5</span>:<span class="number">0</span>] = <span class="number">6</span>b000000</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Step9<br>读取刚扫描点的错误数（es_error_count）及采样的总数（es_sample_count）。</p>
+<blockquote>
+<p>需要特别注意的是，如果ES_VERT_OFFSET及ES_HORZ_OFFSET都为0.及采样的是中心点，那么ES_ERROR_COUNT一定为0.如果此时读出的ES_ERROR_COUNT不为0，那么证明eye scan模块的alignment有问题，需要重新进做alignment。做alignment的步骤如下</p>
+</blockquote>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ES_HORZ_OFFSET = x880 </span><br><span class="line">EYESCANRESET = <span class="number">1</span></span><br><span class="line">ES_HORZ_OFFSET = x800</span><br><span class="line">EYESCANRESET = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li>Step10<br>如果是LPM模式，误码率计算如下<br><img src="/2019/08/14/GTX Eye Scan/Snipaste_2019-08-14_10-22-54.png" alt="LPM的BER计算"><br>回到Step5开始下一点的采样，直到完成整个区域的遍历。<br>如果是DFE模式，记录下当前的es_error_count0及es_sample_count0.然后改变仅仅改变UT的符号，回到Step6，重新再扫描一次，得到新的es_error_count1及es_sample_count1.计算DFE模式下的BER<br><img src="/2019/08/14/GTX Eye Scan/Snipaste_2019-08-14_10-27-21.png" alt="DFE的BER计算"><br>再回到Step5，开始下一个点的采样。</li>
+</ul>
+
       
     </div>
 
@@ -480,6 +509,19 @@
 
     <footer class="post-footer">
       
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/FPGA/" rel="tag"># FPGA</a>
+          
+            <a href="/tags/Kintex7/" rel="tag"># Kintex7</a>
+          
+            <a href="/tags/GTX/" rel="tag"># GTX</a>
+          
+        </div>
+      
 
       
       
@@ -489,8 +531,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/28/Hexo插入本地图片/" rel="next" title="Hexo插入本地图片">
-                <i class="fa fa-chevron-left"></i> Hexo插入本地图片
+              <a href="/2019/07/29/Hexo使用DisqusJS评论系统/" rel="next" title="Hexo使用DisqusJS评论系统">
+                <i class="fa fa-chevron-left"></i> Hexo使用DisqusJS评论系统
               </a>
             
           </div>
@@ -498,10 +540,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/23/OneDrive备份同步任意文件夹/" rel="prev" title="OneDrive备份同步任意文件夹">
-                OneDrive备份同步任意文件夹 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -552,8 +590,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -679,6 +726,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#属性及寄存器"><span class="nav-number">1.</span> <span class="nav-text">属性及寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作步骤"><span class="nav-number">2.</span> <span class="nav-text">操作步骤</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -885,9 +949,9 @@ window.addEventListener("message", function(e) {
       api: 'https://lyth.cf/disqus/api/' || 'https://disqus.com/api/',
       apikey: '7OcNX7oLfYsPbSxup8OdkKAkSNCOsmP0hbJDaNTfUbAkXuw33IZq7yPh8W8YzJTM',
       shortname: 'lyth',
-      url: "https://lyth.cf/2017/07/28/root访问文件被拒绝/",
-      identifier: "2017/07/28/root访问文件被拒绝/",
-      title: 'root用户访问文件被拒绝',
+      url: "https://lyth.cf/2019/08/14/GTX Eye Scan/",
+      identifier: "2019/08/14/GTX Eye Scan/",
+      title: 'GTX Eye Scan',
     });
   }
 

@@ -109,7 +109,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lyth.cf/2018/05/26/基于Apache的SVN服务器搭建/1527302841253.png">
 <meta property="og:image" content="https://lyth.cf/2018/05/26/基于Apache的SVN服务器搭建/1527305241777.png">
-<meta property="og:updated_time" content="2019-07-30T02:06:34.854Z">
+<meta property="og:updated_time" content="2019-07-30T02:22:59.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Apache的SVN服务器搭建">
 <meta name="twitter:description" content="基于ubuntu18.04lts 安装123apt install subversion apache2 libapache2-mod-svna2enmod dav_svn #  enable dav_svn Apache modulea2enmod authz_svn # enable the authz_svn module  建立SVN repo123svnadmin create /hom">
@@ -406,7 +406,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-30 10:06:34" itemprop="dateModified" datetime="2019-07-30T10:06:34+08:00">2019-07-30</time>
+                <time title="修改时间：2019-07-30 10:22:59" itemprop="dateModified" datetime="2019-07-30T10:22:59+08:00">2019-07-30</time>
               </span>
             
           
@@ -477,7 +477,7 @@
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status apache2.service</span><br></pre></td></tr></table></figure>
 
-<h1 id="配置nginx代理"><a href="#配置nginx代理" class="headerlink" title="配置nginx代理"></a>配置nginx代理</h1><figure class="highlight nginxconf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> /svn/ &#123;</span><br><span class="line">	<span class="attribute">proxy_pass</span> http://localhost:8079/svn/;</span><br><span class="line">	<span class="attribute">proxy_redirect</span> http://localhost:8079/ https://epdoc.top/; <span class="comment">#nginx在做反向代理到后端服务器，如果后端服务器有重定向，会出现返回服务器的ip地址，解决办法：</span></span><br><span class="line">	<span class="comment">#proxy_set_header        Host    $host;</span></span><br><span class="line">	<span class="comment">#proxy_set_header        X-Real-IP       $remote_addr;</span></span><br><span class="line">	<span class="comment">#proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;</span></span><br><span class="line">	<span class="comment">#proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;</span></span><br><span class="line">	<span class="comment">#proxy_max_temp_file_size 0;</span></span><br><span class="line">	<span class="comment">#proxy_connect_timeout 90;</span></span><br><span class="line">	<span class="comment">#proxy_send_timeout 90;</span></span><br><span class="line"> 	<span class="comment">#proxy_read_timeout 90;</span></span><br><span class="line">	<span class="comment">#proxy_buffer_size 4k;</span></span><br><span class="line">	<span class="comment">#proxy_buffers 4 32k;</span></span><br><span class="line">	<span class="comment">#proxy_busy_buffers_size 64k;</span></span><br><span class="line">	<span class="comment">#proxy_temp_file_write_size 64k;</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="配置nginx代理"><a href="#配置nginx代理" class="headerlink" title="配置nginx代理"></a>配置nginx代理</h1><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> /svn/ &#123;</span><br><span class="line">	<span class="attribute">proxy_pass</span> http://localhost:8079/svn/;</span><br><span class="line">	<span class="attribute">proxy_redirect</span> http://localhost:8079/ https://epdoc.top/; <span class="comment">#nginx在做反向代理到后端服务器，如果后端服务器有重定向，会出现返回服务器的ip地址，解决办法：</span></span><br><span class="line">	<span class="comment">#proxy_set_header        Host    $host;</span></span><br><span class="line">	<span class="comment">#proxy_set_header        X-Real-IP       $remote_addr;</span></span><br><span class="line">	<span class="comment">#proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;</span></span><br><span class="line">	<span class="comment">#proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;</span></span><br><span class="line">	<span class="comment">#proxy_max_temp_file_size 0;</span></span><br><span class="line">	<span class="comment">#proxy_connect_timeout 90;</span></span><br><span class="line">	<span class="comment">#proxy_send_timeout 90;</span></span><br><span class="line"> 	<span class="comment">#proxy_read_timeout 90;</span></span><br><span class="line">	<span class="comment">#proxy_buffer_size 4k;</span></span><br><span class="line">	<span class="comment">#proxy_buffers 4 32k;</span></span><br><span class="line">	<span class="comment">#proxy_busy_buffers_size 64k;</span></span><br><span class="line">	<span class="comment">#proxy_temp_file_write_size 64k;</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>注意：SVN服务自身不需要配置、启动什么的</p>
@@ -623,7 +623,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -646,7 +646,9 @@
         
           
         
-        <span class="site-state-item-count">3</span>
+          
+        
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -675,7 +677,13 @@
         
           
         
-        <span class="site-state-item-count">6</span>
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
