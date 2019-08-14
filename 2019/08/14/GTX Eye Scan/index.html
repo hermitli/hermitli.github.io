@@ -109,7 +109,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lyth.cf/2019/08/14/GTX%20Eye%20Scan/Snipaste_2019-08-14_10-22-54.png">
 <meta property="og:image" content="https://lyth.cf/2019/08/14/GTX%20Eye%20Scan/Snipaste_2019-08-14_10-27-21.png">
-<meta property="og:updated_time" content="2019-08-14T02:42:47.342Z">
+<meta property="og:updated_time" content="2019-08-14T02:51:15.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GTX Eye Scan">
 <meta name="twitter:description" content="属性及寄存器 ES_VERT_OFFSET范围是-127~+127.  注意这个数据不是二进制补码的形式ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0 ES_HORZ_OFFSET根据RXOUT_DIV不通，范围">
@@ -391,7 +391,7 @@
                 
               
 
-              <time title="创建时间：2019-08-14 14:29:50 / 修改时间：10:42:47" itemprop="dateCreated datePublished" datetime="2019-08-14T14:29:50+08:00">2019-08-14</time>
+              <time title="创建时间：2019-08-14 14:29:50 / 修改时间：10:51:15" itemprop="dateCreated datePublished" datetime="2019-08-14T14:29:50+08:00">2019-08-14</time>
             </span>
           
 
@@ -450,6 +450,8 @@
 <li>ES_HORZ_OFFSET<br>根据RXOUT_DIV不通，范围也不一样<br>RXOUT_DIV=1(Full)       -32 (11’b11111100000) +0(11’b00000000000)  +32(11’b00000100000)<br>RXOUT_DIV=1(Half)      -64 (11’b11111000000) +0(11’b00000000000)  +64(11’b00001000000)<br>RXOUT_DIV=1(Qrtr)     -128 (11’b11110000000) +0(11’b00000000000) +128(11’b00010000000)<br>RXOUT_DIV=1(Octal)   -256 (11’b11100000000) +0(11’b00000000000) +256(11’b00100000000)<br>RXOUT_DIV=1(Hex)     -512 (11’b11000000000) +0(11’b00000000000) +512(11’b01000000000)</li>
 </ul>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ul>
+<li><p>Step0<br>初始化GTX时候，把PMA_RSV2[5]=1，使能eye scan物理模块。如果通过code使能，那么PMA部分需要复位一次。</p>
+</li>
 <li><p>Step1<br>根据RXOUT_DIV确定ES_HORZ_OFFSET的范围。RXOUT_DIV可以通过UG476 Table4-20确定</p>
 </li>
 <li><p>Step2<br>配置GTX，包括EQ及AGC。选择使用LPM模式或是DFE模式，若是DFE模式，一个点要扫描两次，ES_VERT_OFFSET[8]，即UT=1与UT=0各要扫描一次。</p>
@@ -457,10 +459,11 @@
 <li><p>Step3<br>根据数据bus宽度的不通，需要告知eye scan模块比较哪些bit的数据，这是ES_SDATA_MASK 及ES_QUAL_MASK决定的。<br>ES_QUAL_MASK用于忽略掉一些特殊的pattern，例如K28.5.实际使用中，常常设置</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ES_QUAL_MASK=&#123;<span class="number">160</span>&#123;<span class="number">1'b1</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
 
-<p>即不忽略任何pattern。<br>ES_SDATA_MASK需要根据GTX内部bus宽度决定，例如</p>
+<p>即不忽略任何pattern。这个时候，ES_QUALIFIER也就无所谓了。</p>
+<p>ES_SDATA_MASK需要根据GTX内部bus宽度决定，例如</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ES_SDATA_MASK = &#123;&#123;<span class="number">40</span>&#123;<span class="number">1'b1</span>&#125;&#125;, &#123;<span class="number">40</span>&#123;<span class="number">1'b0</span>&#125;&#125;&#125;; <span class="comment">//40-bit width</span></span><br><span class="line">ES_SDATA_MASK = &#123;&#123;<span class="number">40</span>&#123;<span class="number">1'b1</span>&#125;&#125;, &#123;<span class="number">32</span>&#123;<span class="number">1'b0</span>&#125;&#125;, &#123;<span class="number">8</span>&#123;<span class="number">1'b1</span>&#125;&#125;&#125;; <span class="comment">//32-bit width</span></span><br><span class="line">ES_SDATA_MASK = &#123;&#123;<span class="number">40</span>&#123;<span class="number">1'b1</span>&#125;&#125;, &#123;<span class="number">20</span>&#123;<span class="number">1'b0</span>&#125;&#125;,&#123;<span class="number">20</span>&#123;<span class="number">1'b1</span>&#125;&#125;&#125;; <span class="comment">//20-bit width</span></span><br><span class="line">ES_SDATA_MASK = &#123;&#123;<span class="number">40</span>&#123;<span class="number">1'b1</span>&#125;&#125;, &#123;<span class="number">16</span>&#123;<span class="number">1'b0</span>&#125;&#125;,&#123;<span class="number">24</span>&#123;<span class="number">1'b1</span>&#125;&#125;&#125;； <span class="comment">//16-bit width</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Step4<br>开始扫描。设置如下参数<br>ES_CONTROL [5:0] = 6b000000<br>ES_EYE_SCAN_EN = 1b1 使能eye scan模块<br>ES_ERRDET_EN = 1b1 使能 error detection，如果偏移采样的结果与实际恢复数据不一致，SDATA的对应bit会变成1<br>ES_PRESCALE 用于设置期望的误码率，可以从一个比较小的值开始，比如4</p>
+<li><p>Step4<br>开始扫描。设置如下参数<br>ES_CONTROL [5:0] = 6b000000<br>ES_EYE_SCAN_EN = 1b1 使能eye scan功能<br>ES_ERRDET_EN = 1b1 使能 error detection，如果偏移采样的结果与实际恢复数据不一致，SDATA的对应bit会变成1<br>ES_PRESCALE 用于设置期望的误码率，可以从一个比较小的值开始，比如4</p>
 </li>
 <li><p>Step5<br>确定水平及垂直方向采样的步长，例如hstepSize=8，vstepSize=8.然后再设置采样位置ES_VERT_OFFSET及ES_HORZ_OFFSET。水平方向ES_HORZ_OFFSET是一个二进制补码的符号数，需要注意的是范围不要超出，另外中心点的位置数据是<code>ES_HORZ_OFFSET[10]=1&#39;b0</code></p>
 </li>
