@@ -109,7 +109,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lyth.cf/2019/08/14/GTX%20Eye%20Scan/Snipaste_2019-08-14_10-22-54.png">
 <meta property="og:image" content="https://lyth.cf/2019/08/14/GTX%20Eye%20Scan/Snipaste_2019-08-14_10-27-21.png">
-<meta property="og:updated_time" content="2019-08-14T04:11:35.827Z">
+<meta property="og:updated_time" content="2019-08-14T07:19:43.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GTX Eye Scan">
 <meta name="twitter:description" content="属性及寄存器 ES_VERT_OFFSET范围是-127~+127.  注意这个数据不是二进制补码的形式ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0 ES_HORZ_OFFSET根据RXOUT_DIV不通，范围">
@@ -391,7 +391,7 @@
                 
               
 
-              <time title="创建时间：2019-08-14 14:29:50 / 修改时间：12:11:35" itemprop="dateCreated datePublished" datetime="2019-08-14T14:29:50+08:00">2019-08-14</time>
+              <time title="创建时间：2019-08-14 14:29:50 / 修改时间：15:19:43" itemprop="dateCreated datePublished" datetime="2019-08-14T14:29:50+08:00">2019-08-14</time>
             </span>
           
 
@@ -447,7 +447,7 @@
       
         <h2 id="属性及寄存器"><a href="#属性及寄存器" class="headerlink" title="属性及寄存器"></a>属性及寄存器</h2><ul>
 <li>ES_VERT_OFFSET<br>范围是-127~+127.  注意这个数据不是二进制补码的形式<br>ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127<br>ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数<br>ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0</li>
-<li>ES_HORZ_OFFSET<br>根据RXOUT_DIV不通，范围也不一样<br>RXOUT_DIV=1(Full)       -32 (11’b11111100000) +0(11’b00000000000)  +32(11’b00000100000)<br>RXOUT_DIV=1(Half)      -64 (11’b11111000000) +0(11’b00000000000)  +64(11’b00001000000)<br>RXOUT_DIV=1(Qrtr)     -128 (11’b11110000000) +0(11’b00000000000) +128(11’b00010000000)<br>RXOUT_DIV=1(Octal)   -256 (11’b11100000000) +0(11’b00000000000) +256(11’b00100000000)<br>RXOUT_DIV=1(Hex)     -512 (11’b11000000000) +0(11’b00000000000) +512(11’b01000000000)</li>
+<li>ES_HORZ_OFFSET<br>根据RXOUT_DIV不通，范围也不一样<br>RXOUT_DIV=1(Full)       -32 (11’b11111100000) +0(11’b00000000000)  +32(11’b00000100000)<br>RXOUT_DIV=2(Half)      -64 (11’b11111000000) +0(11’b00000000000)  +64(11’b00001000000)<br>RXOUT_DIV=4(Qrtr)     -128 (11’b11110000000) +0(11’b00000000000) +128(11’b00010000000)<br>RXOUT_DIV=8(Octal)   -256 (11’b11100000000) +0(11’b00000000000) +256(11’b00100000000)<br>RXOUT_DIV=16(Hex)     -512 (11’b11000000000) +0(11’b00000000000) +512(11’b01000000000)</li>
 </ul>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ul>
 <li><p>Step0<br>初始化GTX时候，把PMA_RSV2[5]=1，使能eye scan物理模块。如果通过code使能，那么PMA部分需要复位一次。</p>
