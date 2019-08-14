@@ -386,7 +386,7 @@
                 
               
 
-              <time title="创建时间：2019-08-14 14:29:50 / 修改时间：15:19:43" itemprop="dateCreated datePublished" datetime="2019-08-14T14:29:50+08:00">2019-08-14</time>
+              <time title="创建时间：2019-08-14 14:29:50 / 修改时间：15:27:50" itemprop="dateCreated datePublished" datetime="2019-08-14T14:29:50+08:00">2019-08-14</time>
             </span>
           
 
@@ -454,7 +454,7 @@
 <li><p>Step2<br>配置GTX，包括EQ及AGC。选择使用LPM模式或是DFE模式，若是DFE模式，一个点要扫描两次，ES_VERT_OFFSET[8]，即UT=1与UT=0各要扫描一次。</p>
 </li>
 <li><p>Step3<br>根据数据bus宽度的不同，需要告知eye scan模块比较哪些bit的数据，这是ES_SDATA_MASK 及ES_QUAL_MASK决定的。<br>ES_QUAL_MASK用于忽略掉一些特殊的pattern，例如K28.5.实际使用中，常常设置</p>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ES_QUAL_MASK=&#123;<span class="number">160</span>&#123;<span class="number">1'b1</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ES_QUAL_MASK=&#123;<span class="number">80</span>&#123;<span class="number">1'b1</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
 
 <p>即不忽略任何pattern。这个时候，ES_QUALIFIER也就无所谓了。</p>
 <p>ES_SDATA_MASK需要根据GTX内部bus宽度决定，例如</p>
