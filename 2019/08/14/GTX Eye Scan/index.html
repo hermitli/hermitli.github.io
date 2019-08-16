@@ -99,20 +99,20 @@
   };
 </script>
 
-  <meta name="description" content="属性及寄存器 ES_VERT_OFFSET范围是-127~+127.  注意这个数据不是二进制补码的形式ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0  ES_HORZ_OFFSET根据RXOUT_DIV不通，范">
+  <meta name="description" content="属性及寄存器 ES_VERT_OFFSET范围是-127~+127.  注意这个数据不是二进制补码的形式ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0  ES_HORZ_OFFSET根据RXOUT_DIV不同，范">
 <meta name="keywords" content="FPGA,Kintex7,GTX">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GTX Eye Scan">
 <meta property="og:url" content="https://lyth.cf/2019/08/14/GTX Eye Scan/index.html">
 <meta property="og:site_name" content="L&amp;T的生活">
-<meta property="og:description" content="属性及寄存器 ES_VERT_OFFSET范围是-127~+127.  注意这个数据不是二进制补码的形式ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0  ES_HORZ_OFFSET根据RXOUT_DIV不通，范">
+<meta property="og:description" content="属性及寄存器 ES_VERT_OFFSET范围是-127~+127.  注意这个数据不是二进制补码的形式ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0  ES_HORZ_OFFSET根据RXOUT_DIV不同，范">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lyth.cf/2019/08/14/GTX%20Eye%20Scan/Snipaste_2019-08-14_10-22-54.png">
 <meta property="og:image" content="https://lyth.cf/2019/08/14/GTX%20Eye%20Scan/Snipaste_2019-08-14_10-27-21.png">
-<meta property="og:updated_time" content="2019-08-16T10:33:21.404Z">
+<meta property="og:updated_time" content="2019-08-16T10:36:35.744Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GTX Eye Scan">
-<meta name="twitter:description" content="属性及寄存器 ES_VERT_OFFSET范围是-127~+127.  注意这个数据不是二进制补码的形式ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0  ES_HORZ_OFFSET根据RXOUT_DIV不通，范">
+<meta name="twitter:description" content="属性及寄存器 ES_VERT_OFFSET范围是-127~+127.  注意这个数据不是二进制补码的形式ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0  ES_HORZ_OFFSET根据RXOUT_DIV不同，范">
 <meta name="twitter:image" content="https://lyth.cf/2019/08/14/GTX%20Eye%20Scan/Snipaste_2019-08-14_10-22-54.png">
 
 
@@ -406,7 +406,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-16 18:33:21" itemprop="dateModified" datetime="2019-08-16T18:33:21+08:00">2019-08-16</time>
+                <time title="修改时间：2019-08-16 18:36:35" itemprop="dateModified" datetime="2019-08-16T18:36:35+08:00">2019-08-16</time>
               </span>
             
           
@@ -458,7 +458,7 @@
         <h2 id="属性及寄存器"><a href="#属性及寄存器" class="headerlink" title="属性及寄存器"></a>属性及寄存器</h2><ul>
 <li><p>ES_VERT_OFFSET<br>范围是-127~+127.  注意这个数据不是二进制补码的形式<br>ES_VERT_OFFSET[6:0] 代表数据绝对值，0-127<br>ES_VERT_OFFSET[7]代表数据的符号，1代表负数，0代表正数<br>ES_VERT_OFFSET[8] 代表UT的符号，在DFE模式中会用到。LPM模式中，设置为0</p>
 </li>
-<li><p>ES_HORZ_OFFSET<br>根据RXOUT_DIV不通，范围也不一样，ES_HORZ_OFFSET[10:0]的取值范围如下：<br>RXOUT_DIV=1(Full)       -32 (11’b11111100000) +0(11’b00000000000)  +32(11’b00000100000)<br>RXOUT_DIV=2(Half)      -64 (11’b11111000000) +0(11’b00000000000)  +64(11’b00001000000)<br>RXOUT_DIV=4(Qrtr)     -128 (11’b11110000000) +0(11’b00000000000) +128(11’b00010000000)<br>RXOUT_DIV=8(Octal)   -256 (11’b11100000000) +0(11’b00000000000) +256(11’b00100000000)<br>RXOUT_DIV=16(Hex)     -512 (11’b11000000000) +0(11’b00000000000) +512(11’b01000000000)<br>ES_HORZ_OFFSET[11]取值如下：<br>ES_HORZ_OFFSET[11]=1’b0;  //datarate &lt; 10Gbps<br>ES_HORZ_OFFSET[11]=1’b1;  //datarate &gt;= 10Gbps</p>
+<li><p>ES_HORZ_OFFSET<br>根据RXOUT_DIV不同，范围也不一样，ES_HORZ_OFFSET[10:0]的取值范围如下：<br>RXOUT_DIV=1(Full)       -32 (11’b11111100000) +0(11’b00000000000)  +32(11’b00000100000)<br>RXOUT_DIV=2(Half)      -64 (11’b11111000000) +0(11’b00000000000)  +64(11’b00001000000)<br>RXOUT_DIV=4(Qrtr)     -128 (11’b11110000000) +0(11’b00000000000) +128(11’b00010000000)<br>RXOUT_DIV=8(Octal)   -256 (11’b11100000000) +0(11’b00000000000) +256(11’b00100000000)<br>RXOUT_DIV=16(Hex)     -512 (11’b11000000000) +0(11’b00000000000) +512(11’b01000000000)<br>ES_HORZ_OFFSET[11]取值如下：<br>ES_HORZ_OFFSET[11]=1’b0;  //datarate &lt; 10Gbps<br>ES_HORZ_OFFSET[11]=1’b1;  //datarate &gt;= 10Gbps</p>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2></li>
 <li><p>Step0<br>初始化GTX时候，把PMA_RSV2[5]=1，使能eye scan物理模块。如果通过code使能，那么PMA部分需要复位一次。</p>
 </li>
